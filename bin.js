@@ -15,12 +15,12 @@ Dat(os.homedir() + '/dsdata', function (err, dat) {
   const rs = fs.createReadStream(argv._[0])
   const ws = fs.createWriteStream(os.homedir() + '/dsdata' + file)
 
-  const stream = rs.pipe(ws)
-  stream.on('close', function () {
+  rs.pipe(ws)
+
+  rs.on('end', function () {
     dat.importFiles()
     console.log('dat://' + dat.key.toString('hex') + file)
-    console.log(hashbase + file)
+    console.log(hashbase)
     console.log('~/dsdata' + file)
-    process.exit(0)
   })
 })
