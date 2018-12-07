@@ -1,0 +1,15 @@
+{
+  "name": "dsd",
+  "version": "1.0.0",
+  "description": "ds dat",
+  "main": "index.js",
+  "bin": {
+    "dsd": "./bin.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dat-node": "^3.5.13",
+    "minimist": "^1.2.0"
+  }
+}
